@@ -1,0 +1,1 @@
+v0.0.1 - Add clerk auth, add topbar with auth info, add settings page with version info
