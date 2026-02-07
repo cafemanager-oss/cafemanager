@@ -1,0 +1,6 @@
+services:
+  dev-db:
+    image: postgres:18.1
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: dev
