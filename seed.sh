@@ -17,3 +17,12 @@ CREATE TABLE user_data (
     user_type user_type NOT NULL,
     onboarding_done BOOLEAN NOT NULL
 );
+
+CREATE TABLE cafe (
+    clerk_owner_id TEXT NOT NULL REFERENCES user_data(clerk_user_id),
+    cafe_name TEXT NOT NULL,
+    cafe_description TEXT NOT NULL,
+    cafe_phone TEXT,
+    cafe_email TEXT,
+    cafe_address TEXT NOT NULL
+);
