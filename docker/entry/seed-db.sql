@@ -1,0 +1,10 @@
+CREATE USER app_user WITH ENCRYPTED PASSWORD 'set-password';
+CREATE USER app_owner WITH ENCRYPTED PASSWORD 'set-password';
+CREATE DATABASE app_database_main WITH OWNER = app_owner;
+GRANT CONNECT ON DATABASE app_database_main TO app_user;
+\c app_database_main app_owner;
+CREATE SCHEMA app;
+SET search_path TO app,public;
+GRANT USAGE, CREATE on SCHEMA app TO app_user;
+\c app_database_main postgres;
+ALTER DEFAULT PRIVILEGES FOR USER app_user IN SCHEMA app GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO app_user;

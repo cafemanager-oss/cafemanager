@@ -4,3 +4,8 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: dev
+    volumes:
+      - ./docker/entry:/docker-entrypoint-initdb.d
+      - ./docker/docker_data/db:/var/lib/postgresql/18/docker
+    ports:
+      - 5432:5432
