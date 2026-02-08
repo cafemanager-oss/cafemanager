@@ -1,7 +1,7 @@
 import { auth } from '@clerk/nextjs/server'
-import { VERSION_DATA } from '../lib/data/general'
-import { PageTitle } from '../lib/components/settings/VersionDisplay'
-import sql from '../lib/utils/db/db'
+import { VERSION_DATA } from '../../lib/data/general'
+import { PageTitle } from '../../lib/components/settings/VersionDisplay'
+import sql from '../../lib/utils/db/db'
 
 export default async function Page() {
     const { isAuthenticated, redirectToSignIn, userId: clerkUserId } = await auth()

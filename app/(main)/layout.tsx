@@ -1,6 +1,4 @@
 import { SignedOut, SignInButton, SignUpButton, SignedIn, UserButton } from '@clerk/nextjs'
-import Header from '../lib/components/Header'
-
 export default function Layout({
     children,
 }: Readonly<{
@@ -8,7 +6,7 @@ export default function Layout({
 }>) {
     return (
         <div>
-            <header className="flex justify-end items-center p-4 gap-4 h-16 bg-green-100 dark:bg-black fixed w-dvw">
+            <header className="flex justify-end items-center p-4 gap-4 h-16 bg-white dark:bg-black fixed w-dvw">
                 {/* Show the sign-in and sign-up buttons when the user is signed out */}
                 <SignedOut>
                     <SignInButton />
