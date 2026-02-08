@@ -1,7 +1,11 @@
+import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const { isAuthenticated, redirectToSignIn, userId: clerkUserId } = await auth()
+  if (isAuthenticated) redirect("/dashboard")
   return (
     <div className="flex min-h-screen items-center justify-center font-sans bg-green-100">
       <main className="flex min-h-screen w-full flex-col items-center justify-center py-32 px-16  dark:bg-black ">
